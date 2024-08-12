@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
-    "dev": "turbo dev",
+    "dev:backend": "cd apps/backend && uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload",
+    "dev": "turbo dev && npm run dev:backend",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
